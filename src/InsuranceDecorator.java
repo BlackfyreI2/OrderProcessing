@@ -1,4 +1,3 @@
-/** Decorator (Part 4): ประกัน คิด 10% ของราคาสินค้าใน Order */
 public class InsuranceDecorator extends ShipmentDecorator {
     private final Order order;
 
@@ -8,14 +7,21 @@ public class InsuranceDecorator extends ShipmentDecorator {
         this.order = order;
     }
 
-    @Override public String getInfo() {
-        // TODO (4c): คืน info ของตัวที่ห่อ แล้วต่อท้ายด้วย " + Insurance"
-        return /* ====== replace this ====== */ wrappedShipment.getInfo();
+    @Override 
+    public String getInfo() {
+       
+        
+        /* ====== fill in here ====== */
+        return wrappedShipment.getInfo() + " + Insurance";
+        /* ========================== */
     }
 
-    @Override public double getCost() {
-        // TODO (4d): คืน cost ของตัวที่ห่อ บวกด้วย 10% ของราคาสินค้าใน order
-        //   hint: wrappedShipment.getCost() + order.getTotalPrice() * 0.10
-        return /* ====== replace this ====== */ wrappedShipment.getCost();
+    @Override 
+    public double getCost() {
+        
+        
+        /* ====== fill in here ====== */
+        return wrappedShipment.getCost() + order.getTotalPrice() * 0.10;
+        /* ========================== */
     }
 }

@@ -1,4 +1,3 @@
-/** Strategy (Part 2): ลดราคาเป็นจำนวนเงินคงที่ เช่น new FixedDiscount(100) = ลด 100 บาท */
 public class FixedDiscount implements DiscountStrategy {
     private final double amount;
 
@@ -7,9 +6,11 @@ public class FixedDiscount implements DiscountStrategy {
         this.amount = amount;
     }
 
-    @Override public double applyDiscount(Order order) {
-        // TODO (2b): คืน (ราคารวม - amount) แต่ต้องไม่ต่ำกว่า 0
-        //   hint: Math.max(order.getTotalPrice() - amount, 0)
-        return /* ====== replace this ====== */ order.getTotalPrice();
+    @Override 
+    public double applyDiscount(Order order) {
+     
+      
+        return Math.max(order.getTotalPrice() - amount, 0);
+       
     }
 }
